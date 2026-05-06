@@ -57,7 +57,7 @@ export default function PolicyConfirmationPage() {
         <div className="bg-white rounded-2xl shadow-sm border-t-4 border-t-primary border-x border-b border-gray-100 relative overflow-hidden">
           {/* Mock watermark */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] font-black text-gray-50/40 -rotate-12 pointer-events-none select-none z-0">
-            STITCH
+            INSURSHIELD
           </div>
 
           <div className="p-6 relative z-10 border-b border-gray-100 bg-surface-container-low">
