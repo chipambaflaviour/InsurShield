@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#8f0f07",
+                    "tertiary-container": "#0021b9",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "primary-fixed": "#ffdad4",
+                    "on-tertiary-container": "#94a0ff",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary": "#5f5e5e",
+                    "surface-bright": "#fff8f6",
+                    "tertiary-fixed": "#dfe0ff",
+                    "surface-container": "#ffe9e6",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#b22b1d",
+                    "on-tertiary-fixed-variant": "#1830c2",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#261816",
+                    "on-background": "#261816",
+                    "surface-container-low": "#fff0ee",
+                    "primary": "#570000",
+                    "inverse-primary": "#ffb4a8",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-variant": "#f7ddd8",
+                    "on-tertiary-fixed": "#000c61",
+                    "inverse-surface": "#3d2d2a",
+                    "error": "#ba1a1a",
+                    "primary-container": "#800000",
+                    "surface-container-high": "#fde2de",
+                    "surface": "#fff8f6",
+                    "on-surface-variant": "#5a413d",
+                    "tertiary-fixed-dim": "#bcc2ff",
+                    "tertiary": "#00137f",
+                    "secondary-container": "#e2dfde",
+                    "outline-variant": "#e2bfb9",
+                    "outline": "#8e706c",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed": "#410000",
+                    "surface-container-highest": "#f7ddd8",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#eed4d0",
+                    "on-primary-container": "#ff8371",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#ffedea",
+                    "on-secondary-container": "#636262",
+                    "background": "#fff8f6",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error": "#ffffff",
+                    "gold": "#C5A059"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "sidebar_width": "260px",
+                    "md": "16px",
+                    "xxl": "48px",
+                    "xs": "8px",
+                    "topbar_height": "64px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "h3": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "h2": ["Inter"],
+                    "h1": ["Inter"],
+                    "button": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm docked full-width top-0 z-50 flex justify-between items-center h-16 px-4 w-full sticky">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer">menu</span>
+<h1 class="text-lg font-black text-red-900 dark:text-red-400 uppercase tracking-widest font-h1">InsureDirect</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">search</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male executive in a sharp navy blue suit, set against a clean, minimalist studio background. The lighting is soft and high-key, emphasizing a reliable and authoritative corporate persona. The overall color palette is neutral with high contrast, aligning with a premium financial services user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQpSNbhU1E6fOQb84IB3FJa-77ZlYiTEGr4PmYgDYyaHqlqd7O6rn88lcgiFFwytAaDBFUSmfuXm6reTsVosVXuFXoE8NBpv_FN3jczP4k7zr1L5p_oOiOzpM0RB2Z5wjlGz1ARnOiGDUU1j5jn4tN0eiMU-NL9JM-cR6iShH-jUfBeE9BkvRKtu7D6BRBY8k5cUw8GzOfoiat306PieqxJdJ50ixBSCkiw5zp9uHKkT3DZ-JRR82vhVoqws82Oz-IfQOz48PDyI"/>
+</div>
+</div>
+</header>
+<main class="pb-40 lg:pb-24 max-w-4xl mx-auto px-4 pt-6">
+<!-- Header & UX Guidance -->
+<div class="mb-8">
+<h2 class="font-h2 text-h2 text-primary mb-2">Compare &amp; Select Insurers</h2>
+<div class="flex items-start gap-3 bg-surface-container-low p-4 rounded-xl border border-surface-variant">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Different insurers have different inspection requirements. Select 3-5 providers to proceed with detailed comparisons.
+                </p>
+</div>
+</div>
+<!-- Insurer Cards Grid -->
+<div class="space-y-4">
+<!-- Card 1: Premium Insurer -->
+<div class="bg-white rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] border-2 border-gold p-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-gold text-white font-label-caps text-[10px] px-3 py-1 rounded-bl-lg">BEST VALUE</div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-primary">Prestige Assurance</h3>
+<p class="font-body-sm text-body-sm text-secondary">Comprehensive Gold Plan</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-secondary">ANNUAL PREMIUM</div>
+<div class="font-h2 text-h2 text-primary">$1,240.00</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<div class="flex items-center gap-1.5 bg-red-50 text-red-900 px-3 py-1 rounded-full text-[11px] font-bold border border-red-100">
+<span class="material-symbols-outlined text-[14px]">fact_check</span>
+                        NOT REQUIRED
+                    </div>
+<div class="flex items-center gap-1.5 bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                        AFTER PAYMENT
+                    </div>
+<div class="flex items-center gap-1.5 bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+                        SELF-CAPTURE
+                    </div>
+</div>
+<div class="flex justify-end border-t border-slate-50 pt-3">
+<label class="flex items-center gap-2 cursor-pointer group">
+<span class="font-button text-button text-primary group-active:opacity-70 transition-opacity">Select Insurer</span>
+<input checked="" class="w-6 h-6 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Card 2: Standard Insurer -->
+<div class="bg-white rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] border border-slate-100 p-4">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-primary text-3xl">shield</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-primary">Global Guard</h3>
+<p class="font-body-sm text-body-sm text-secondary">Elite Security Policy</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-secondary">ANNUAL PREMIUM</div>
+<div class="font-h2 text-h2 text-primary">$985.50</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<div class="flex items-center gap-1.5 bg-amber-50 text-amber-900 px-3 py-1 rounded-full text-[11px] font-bold border border-amber-100">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span>
+                        REQUIRED
+                    </div>
+<div class="flex items-center gap-1.5 bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">alarm</span>
+                        BEFORE QUOTATION
+                    </div>
+<div class="flex items-center gap-1.5 bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                        PHYSICAL
+                    </div>
+</div>
+<div class="flex justify-end border-t border-slate-50 pt-3">
+<label class="flex items-center gap-2 cursor-pointer group">
+<span class="font-button text-button text-primary group-active:opacity-70 transition-opacity">Select Insurer</span>
+<input checked="" class="w-6 h-6 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Card 3: Budget Insurer -->
+<div class="bg-white rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] border border-slate-100 p-4">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-primary text-3xl">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-primary">ValueDirect</h3>
+<p class="font-body-sm text-body-sm text-secondary">Essential Shield</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-secondary">ANNUAL PREMIUM</div>
+<div class="font-h2 text-h2 text-primary">$720.00</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<div class="flex items-center gap-1.5 bg-blue-50 text-blue-900 px-3 py-1 rounded-full text-[11px] font-bold border border-blue-100">
+<span class="material-symbols-outlined text-[14px]">playlist_add_check</span>
+                        OPTIONAL
+                    </div>
+<div class="flex items-center gap-1.5 bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+                        BEFORE PAYMENT
+                    </div>
+<div class="flex items-center gap-1.5 bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+                        SELF-CAPTURE
+                    </div>
+</div>
+<div class="flex justify-end border-t border-slate-50 pt-3">
+<label class="flex items-center gap-2 cursor-pointer group">
+<span class="font-button text-button text-primary group-active:opacity-70 transition-opacity">Select Insurer</span>
+<input checked="" class="w-6 h-6 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Card 4: Unselected -->
+<div class="bg-white/50 rounded-xl border border-dashed border-slate-200 p-4 opacity-70 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-slate-400 text-3xl">security</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-slate-700">Metro Safe</h3>
+<p class="font-body-sm text-body-sm text-secondary">Standard Protection</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-secondary">ANNUAL PREMIUM</div>
+<div class="font-h2 text-h2 text-slate-400">$1,105.00</div>
+</div>
+</div>
+<div class="flex justify-end pt-3">
+<label class="flex items-center gap-2 cursor-pointer group">
+<span class="font-button text-button text-slate-500 group-active:opacity-70 transition-opacity">Select Insurer</span>
+<input class="w-6 h-6 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</main>
+<!-- Selected Insurers Summary Section (Floating Bottom) -->
+<section class="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-8px_16px_-4px_rgba(0,0,0,0.1)] border-t border-slate-100 z-40">
+<div class="max-w-4xl mx-auto p-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-primary">SELECTED INSURERS</span>
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full">3 / 5</span>
+</div>
+<button class="text-primary font-button text-sm flex items-center gap-1">
+                    Clear All
+                    <span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+<!-- Mini Thumb 1 -->
+<div class="flex-shrink-0 flex items-center gap-2 bg-red-50 border border-primary/20 p-2 rounded-lg pr-4">
+<div class="w-8 h-8 bg-white rounded flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">verified</span>
+</div>
+<div>
+<div class="text-[11px] font-bold text-primary leading-none">Prestige</div>
+<div class="text-[10px] text-primary/70">$1,240</div>
+</div>
+</div>
+<!-- Mini Thumb 2 -->
+<div class="flex-shrink-0 flex items-center gap-2 bg-red-50 border border-primary/20 p-2 rounded-lg pr-4">
+<div class="w-8 h-8 bg-white rounded flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">shield</span>
+</div>
+<div>
+<div class="text-[11px] font-bold text-primary leading-none">Global</div>
+<div class="text-[10px] text-primary/70">$985</div>
+</div>
+</div>
+<!-- Mini Thumb 3 -->
+<div class="flex-shrink-0 flex items-center gap-2 bg-red-50 border border-primary/20 p-2 rounded-lg pr-4">
+<div class="w-8 h-8 bg-white rounded flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">account_balance_wallet</span>
+</div>
+<div>
+<div class="text-[11px] font-bold text-primary leading-none">ValueD</div>
+<div class="text-[10px] text-primary/70">$720</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-button py-4 rounded-xl shadow-lg active:scale-[0.98] transition-transform">
+                Proceed to Detailed Comparison
+            </button>
+</div>
+</section>
+</body></html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#3d2d2a",
+                    "on-surface-variant": "#5a413d",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#1830c2",
+                    "tertiary-fixed": "#dfe0ff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "on-primary-fixed-variant": "#8f0f07",
+                    "tertiary": "#00137f",
+                    "background": "#fff8f6",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#94a0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#ffedea",
+                    "inverse-primary": "#ffb4a8",
+                    "surface-container-low": "#fff0ee",
+                    "primary-fixed": "#ffdad4",
+                    "primary": "#570000",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-container": "#800000",
+                    "surface": "#fff8f6",
+                    "tertiary-fixed-dim": "#bcc2ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#000c61",
+                    "surface-dim": "#eed4d0",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#ff8371",
+                    "surface-container-high": "#fde2de",
+                    "on-surface": "#261816",
+                    "on-primary-fixed": "#410000",
+                    "surface-container": "#ffe9e6",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-tint": "#b22b1d",
+                    "outline": "#8e706c",
+                    "tertiary-container": "#0021b9",
+                    "secondary-container": "#e2dfde",
+                    "on-secondary-container": "#636262",
+                    "surface-variant": "#f7ddd8",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-container-highest": "#f7ddd8",
+                    "error-container": "#ffdad6",
+                    "on-background": "#261816",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "outline-variant": "#e2bfb9",
+                    "surface-bright": "#fff8f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "topbar_height": "64px",
+                    "sidebar_width": "260px",
+                    "base": "4px",
+                    "sm": "12px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "xxl": "48px",
+                    "gutter": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h1": ["Inter"],
+                    "button": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h3": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm h-16 flex items-center justify-between px-6 w-full max-w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70" data-icon="menu">menu</span>
+<span class="text-2xl font-bold tracking-tighter text-red-900 dark:text-red-500">InsurShield</span>
+</div>
+<div class="hidden md:flex items-center space-gap-6">
+<nav class="flex items-center gap-8">
+<span class="font-sans antialiased text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer active:opacity-70">Requests</span>
+<span class="font-sans antialiased text-sm font-semibold text-red-900 dark:text-red-400 border-b-2 border-red-900 cursor-pointer">Quotes</span>
+<span class="font-sans antialiased text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer active:opacity-70">Policies</span>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male client with a confident expression, set against a blurred corporate office background. The lighting is soft and professional, emphasizing a modern light-mode aesthetic with high-end financial service vibes. The color palette is composed of natural skin tones and deep corporate blacks, maintaining a clean and trustworthy atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0UDShsUKHxhb-7PKBYauhB9QU7dbSYupe7DZzxhE6gw8TTO5V-WfyYWgahMdsTwnnNEHWmx3gKO5ZpviWZZaL0gRTBM8ANy0HVziUeTUlTKVgX66bUfSYImiT1UyWLrxXoL6P2G3dvrvbypL34woTudz3GgIWqOVqFWE__8iizmTeBby89-R5v2mAR8KP4cYDW7AwzYyGlLkWknaj0xrfaAsqufUaSapL4Na4Mw3PG0jHbQPFscidbF5wWu6G0AAMmNBnTlo3Vw0"/>
+</div>
+</div>
+</header>
+<!-- Sidebar Navigation for Desktop -->
+<aside class="hidden md:flex fixed left-0 top-0 flex flex-col h-full z-40 w-[260px] bg-gray-50 dark:bg-gray-950 border-r border-gray-200 dark:border-gray-800 pt-20">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<p class="text-sm font-semibold tracking-wide text-red-900 dark:text-red-500">Alex Sterling</p>
+<p class="text-xs text-secondary-container text-on-secondary-container">Private Client</p>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+<span class="text-sm font-semibold tracking-wide">Requests</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-red-900 dark:text-red-400 border-r-4 border-red-900 dark:border-red-500 bg-red-50/50 dark:bg-red-900/10 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-sm font-semibold tracking-wide">Quotes</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="text-sm font-semibold tracking-wide">Policies</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<span class="text-sm font-semibold tracking-wide">Claims</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="business">business</span>
+<span class="text-sm font-semibold tracking-wide">Insurers</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-sm font-semibold tracking-wide">Transactions</span>
+</div>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 md:pl-[260px] min-h-screen px-4 md:px-8">
+<!-- Summary Banner -->
+<section class="max-w-5xl mx-auto mb-8">
+<div class="bg-primary-container text-white p-6 rounded-xl shadow-md relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h1 class="font-h1 text-h1 mb-2">Quote Comparison</h1>
+<p class="font-body-sm text-body-sm opacity-90">Comprehensive Health &amp; Life Coverage for Alex Sterling</p>
+</div>
+<div class="flex items-center gap-4 bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/20">
+<div class="text-right">
+<p class="font-label-caps text-label-caps uppercase text-white/70">Request ID</p>
+<p class="font-button text-button">#SHIELD-88291</p>
+</div>
+<div class="w-px h-8 bg-white/20"></div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps uppercase text-white/70">Expires In</p>
+<p class="font-button text-button text-on-primary-container">48 Hours</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- Filters & Toggles -->
+<section class="max-w-5xl mx-auto mb-6 flex items-center justify-between">
+<div class="flex gap-2">
+<span class="px-4 py-2 bg-white border border-outline-variant rounded-full font-label-caps text-label-caps text-primary cursor-pointer hover:bg-surface-container transition-colors">Best Value</span>
+<span class="px-4 py-2 bg-white border border-outline-variant rounded-full font-label-caps text-label-caps text-secondary cursor-pointer hover:bg-surface-container transition-colors">Lowest Price</span>
+<span class="px-4 py-2 bg-white border border-outline-variant rounded-full font-label-caps text-label-caps text-secondary cursor-pointer hover:bg-surface-container transition-colors">Top Rated</span>
+</div>
+<div class="hidden md:flex items-center gap-2 bg-surface-container-low p-1 rounded-full border border-outline-variant">
+<button class="px-4 py-1 bg-white shadow-sm rounded-full font-button text-body-sm text-primary">List View</button>
+<button class="px-4 py-1 text-secondary font-button text-body-sm hover:text-primary">Grid View</button>
+</div>
+</section>
+<!-- Quote Cards -->
+<section class="max-w-5xl mx-auto space-y-6">
+<!-- Best Value Quote Card -->
+<div class="bg-white border-l-4 border-l-tertiary-container rounded-xl shadow-lg overflow-hidden flex flex-col lg:flex-row transition-all hover:translate-y-[-2px] hover:shadow-xl">
+<div class="p-6 flex-1 border-b lg:border-b-0 lg:border-r border-gray-100">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-gray-50 border border-gray-100 rounded-lg flex items-center justify-center p-2">
+<img class="max-h-full max-w-full grayscale brightness-50" data-alt="A professional, corporate logo for an insurance firm called Insurer A, featuring minimalist geometric shapes in a professional navy blue and white color scheme. The visual style is crisp and modern, conveying reliability and institutional authority within the high-end financial sector. The lighting is neutral and clear, suggesting a high-trust brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLaX7ujBsp9gY8ZO2vl7YTJLW0x_U9Xtx7XhEyHd4h3UQsWm36SvcBoyoipwByldLXBWuRVU1HWqMlgoRlkAe7UaVLJvbQejliyHxUWUw6whpq7dFrEO8cqSM0Y2mdwczFan2e4nMUqYDCPgivg-OMjMNvy_yJsKOjnbuNj6wZM3Fx-cWFKoK5zOqszQ7sA1H_bDvQefUWtkoa9umi6imXwIHcLC7tJbGzhXJIwUqJBb34ZaqNoaCI3Vybu_r7UfDgVAP0tMJmpR0"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-primary">Elite Global Guardian</h3>
+<div class="flex items-center gap-1 text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps">4.9 · Insurer A</span>
+</div>
+</div>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full font-label-caps text-label-caps">RECOMMENDED</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Unlimited international medical coverage including private hospitals.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Zero deductible on all emergency inpatient procedures.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Exclusive 24/7 concierge health advocacy service.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Includes family-wide travel and luggage insurance.</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low lg:w-72 p-6 flex flex-col justify-center items-center text-center">
+<p class="font-label-caps text-label-caps text-secondary mb-1">ANNUAL PREMIUM</p>
+<div class="mb-6">
+<span class="text-4xl font-extrabold text-primary">$4,250</span>
+<span class="font-body-sm text-secondary">/year</span>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-lg font-button hover:bg-primary-container transition-all active:scale-[0.98] shadow-md shadow-primary/20">
+                        Select This Quote
+                    </button>
+<p class="mt-4 font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:underline">View Policy Details</p>
+</div>
+</div>
+<!-- Standard Quote Card -->
+<div class="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden flex flex-col lg:flex-row transition-all hover:shadow-md">
+<div class="p-6 flex-1 border-b lg:border-b-0 lg:border-r border-gray-100">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-gray-50 border border-gray-100 rounded-lg flex items-center justify-center p-2">
+<img class="max-h-full max-w-full grayscale opacity-40" data-alt="A sleek corporate emblem for Insurer B, characterized by clean lines and a minimalist aesthetic. The logo uses a professional grayscale palette with sharp edges, conveying precision and modern efficiency. Set in a high-key lighting environment that fits a light-mode UI, it maintains a premium feel suitable for a private insurance concierge service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzDJHH6awemPDTZSStz6wDrhe0aZS5L45y9A68Vlp3WCZHn43wQldpW03WJH9oeESLetpt4Q5vksbHfmFiS4QaWKBBjftz--v8IKZPPrs3AnPQOSw04JcvVLGPGtZFUeDK5a2JNR-JI1kchc6LN2byvjRPdBKHAZd3QAVaOZy5ReDXWDS1J1XyA0Qdp9UDxSXrlr2rSw1h2dWmNHsJZPhKnza6-6bvMroD8CHIksutfdD1dOx2e_L9esp2zC4QS-t1ea8pa-7qDa4"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Secure Horizon Plan</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="star">star</span>
+<span class="font-label-caps text-label-caps">4.5 · Insurer B</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check">check</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Standard medical coverage up to $2M annually.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check">check</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">$500 deductible for outpatient specialist visits.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check">check</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Direct billing with 150+ regional network providers.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check">check</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Simple digital claim filing via mobile app.</span>
+</div>
+</div>
+</div>
+<div class="bg-white lg:w-72 p-6 flex flex-col justify-center items-center text-center">
+<p class="font-label-caps text-label-caps text-secondary mb-1">ANNUAL PREMIUM</p>
+<div class="mb-6">
+<span class="text-4xl font-extrabold text-on-surface">$3,120</span>
+<span class="font-body-sm text-secondary">/year</span>
+</div>
+<button class="w-full py-4 border-2 border-primary text-primary rounded-lg font-button hover:bg-red-50 transition-all active:scale-[0.98]">
+                        Select This Quote
+                    </button>
+<p class="mt-4 font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:underline">View Policy Details</p>
+</div>
+</div>
+<!-- Budget/Value Card -->
+<div class="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden flex flex-col lg:flex-row transition-all hover:shadow-md">
+<div class="p-6 flex-1 border-b lg:border-b-0 lg:border-r border-gray-100">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-gray-50 border border-gray-100 rounded-lg flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-4xl text-gray-300" data-icon="business">business</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Essential Care Plus</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="star_half">star_half</span>
+<span class="font-label-caps text-label-caps">4.2 · Insurer C</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check">check</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Core medical coverage with $500k limit.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check">check</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Co-payment structure for non-emergency visits.</span>
+</div>
+</div>
+</div>
+<div class="bg-white lg:w-72 p-6 flex flex-col justify-center items-center text-center">
+<p class="font-label-caps text-label-caps text-secondary mb-1">ANNUAL PREMIUM</p>
+<div class="mb-6">
+<span class="text-4xl font-extrabold text-on-surface">$2,400</span>
+<span class="font-body-sm text-secondary">/year</span>
+</div>
+<button class="w-full py-4 border-2 border-primary text-primary rounded-lg font-button hover:bg-red-50 transition-all active:scale-[0.98]">
+                        Select This Quote
+                    </button>
+<p class="mt-4 font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:underline">View Policy Details</p>
+</div>
+</div>
+</section>
+<!-- Help Section -->
+<section class="max-w-5xl mx-auto mt-12 mb-12">
+<div class="bg-surface-container border border-outline-variant p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8">
+<div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="headset_mic">headset_mic</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h2 class="font-h2 text-h2 text-primary mb-2">Need help choosing?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Our private insurance advisors are available for a 1-on-1 consultation to compare these benefits in detail.</p>
+</div>
+<button class="px-8 py-3 bg-inverse-surface text-on-primary rounded-lg font-button hover:bg-primary transition-colors whitespace-nowrap shadow-lg">
+                    Schedule a Call
+                </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded-xl px-3 py-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Policies</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="headset_mic">headset_mic</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+</body></html>

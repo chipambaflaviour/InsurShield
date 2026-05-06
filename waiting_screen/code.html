@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#3d2d2a",
+                        "on-surface-variant": "#5a413d",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#1830c2",
+                        "tertiary-fixed": "#dfe0ff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed-variant": "#8f0f07",
+                        "tertiary": "#00137f",
+                        "background": "#fff8f6",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#94a0ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#ffedea",
+                        "inverse-primary": "#ffb4a8",
+                        "surface-container-low": "#fff0ee",
+                        "primary-fixed": "#ffdad4",
+                        "primary": "#570000",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-container": "#800000",
+                        "surface": "#fff8f6",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#000c61",
+                        "surface-dim": "#eed4d0",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#ff8371",
+                        "surface-container-high": "#fde2de",
+                        "on-surface": "#261816",
+                        "on-primary-fixed": "#410000",
+                        "surface-container": "#ffe9e6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-tint": "#b22b1d",
+                        "outline": "#8e706c",
+                        "tertiary-container": "#0021b9",
+                        "secondary-container": "#e2dfde",
+                        "on-secondary-container": "#636262",
+                        "surface-variant": "#f7ddd8",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-highest": "#f7ddd8",
+                        "error-container": "#ffdad6",
+                        "on-background": "#261816",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "outline-variant": "#e2bfb9",
+                        "surface-bright": "#fff8f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "topbar_height": "64px",
+                        "sidebar_width": "260px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "gutter": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "button": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm fixed top-0 w-full h-16 z-50 flex items-center justify-between px-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70">menu</span>
+<span class="text-2xl font-bold tracking-tighter text-red-900 dark:text-red-500">InsurShield</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of Alex Sterling, a high-net-worth client, for a premium financial dashboard profile. He is wearing a tailored charcoal suit against a clean, soft-lit neutral studio background. The lighting is sophisticated and bright, matching a light-mode corporate aesthetic. The overall mood conveys reliability, wealth, and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG1iLwedz3TF5mi-VxCUfclQU3qWpe84MNnXou3UaUl0AVGtPItRzCxxE4SuREKUV85Oi5hE9ueeUoBxVKFtDLw2dLHOQIhZNpULXUB5y4hhRlcjSM77Bg38U2ZRgUkV-XIAMlkMe98MajkEmxpa_BCTbd1YgbPf3X1oJPme_CK1CJreHZsNufIZ-4omaCoNzSsF1u0jvpjNk6Q_fwqxlI_ja8W_EnumQxUAUUsJ7qVC8d5aUW7FKdZ9ENz2r20jxF0FHkvUE16BE"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="mt-16 w-full max-w-4xl px-6 py-12 flex flex-col items-center text-center">
+<!-- Illustration Section -->
+<div class="mb-8 relative">
+<div class="absolute -inset-4 bg-primary-fixed/30 blur-2xl rounded-full"></div>
+<img alt="Processing Illustration" class="relative w-72 h-48 object-cover rounded-2xl shadow-xl border-4 border-white" data-alt="A minimalist and high-end digital illustration representing a secure document processing center. The scene features clean geometric glass panels, soft glowing digital lines in maroon and gold, and a serene, professional atmosphere. High-key studio lighting emphasizes a bright and trustworthy environment. The palette is dominated by deep maroon accents on a white and light beige background, symbolizing corporate insurance authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMd1j8_eHltyh2Ai3EA_P-emsvAEysDK_hBwvxU1R5kPAc7a74_SJdrJb40bfxJuSpvn1IgJRs-Eav2Lh7W6I7AERvPib64LIV1v2PuJF1ZLgZB6ECt4o-YpG71mbQVWuuTnbOgCT89D_c898g8D_WMvecC1VA2oIJJQ-gbIenKyTH9fce11kN-qqc7v10LVnweGM1s6v3hu_Dy0a4mo7XC3ETHiVhreCZ-o1C3A4Uuc29Zrvrg4rvwTv3yqrKXqU0jpUTMJH34mo"/>
+<div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-xl shadow-lg border border-gray-100">
+<span class="material-symbols-outlined text-red-900 text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Success Message -->
+<div class="mb-10">
+<h1 class="font-h1 text-h1 text-primary mb-3">Success! Your request is being processed.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+                Our underwriting team and partner insurers have received your application. We are now working to secure the most competitive premiums for your portfolio.
+            </p>
+</div>
+<!-- Progress Tracker -->
+<div class="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-sm border border-surface-container-high mb-10">
+<div class="flex justify-between items-start relative">
+<!-- Progress Line -->
+<div class="absolute top-5 left-0 w-full h-1 bg-surface-container-high z-0">
+<div class="h-full w-1/2 bg-primary"></div>
+</div>
+<!-- Step 1: Completed -->
+<div class="relative z-10 flex flex-col items-center w-1/3">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-xl">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary">Request Sent</span>
+<span class="text-[10px] text-on-surface-variant mt-1">Today, 2:14 PM</span>
+</div>
+<!-- Step 2: In Progress -->
+<div class="relative z-10 flex flex-col items-center w-1/3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-3 ring-4 ring-primary-fixed/50">
+<span class="material-symbols-outlined text-xl text-on-primary" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary">Insurers Reviewing</span>
+<span class="text-[10px] text-on-surface-variant mt-1">Active Now</span>
+</div>
+<!-- Step 3: Pending -->
+<div class="relative z-10 flex flex-col items-center w-1/3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-xl">description</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-secondary-container">Quotes Ready</span>
+<span class="text-[10px] text-on-surface-variant mt-1">Estimated</span>
+</div>
+</div>
+</div>
+<!-- Waiting Notice -->
+<div class="flex items-center gap-3 bg-primary-fixed/20 px-6 py-4 rounded-full border border-primary-fixed/40 mb-12">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<p class="font-body-md text-body-md text-primary font-medium">Quotes will be ready within 24 hours</p>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="bg-primary text-on-primary font-button text-button px-10 py-4 rounded-xl shadow-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">dashboard</span>
+                Go to Dashboard
+            </button>
+<button class="bg-transparent text-primary border border-primary font-button text-button px-10 py-4 rounded-xl hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">mail</span>
+                View Confirmation
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile View Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 md:hidden shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:text-red-800 dark:hover:text-red-300 active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded-xl px-3 py-1 active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Policies</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:text-red-800 dark:hover:text-red-300 active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">headset_mic</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:text-red-800 dark:hover:text-red-300 active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+<!-- Decorative Sidebar Hint (Desktop Only) -->
+<aside class="hidden lg:flex fixed left-0 top-0 flex flex-col h-full w-[260px] bg-gray-50 dark:bg-gray-950 border-r border-gray-200 dark:border-gray-800 z-40 p-6 pt-24">
+<div class="space-y-6">
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 transition-all cursor-pointer text-gray-700">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="text-sm font-semibold tracking-wide">Requests</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl text-red-900 border-r-4 border-red-900 bg-red-50/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="text-sm font-semibold tracking-wide">Quotes</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 transition-all cursor-pointer text-gray-700">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-sm font-semibold tracking-wide">Policies</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 transition-all cursor-pointer text-gray-700">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-sm font-semibold tracking-wide">Transactions</span>
+</div>
+</div>
+<div class="mt-auto border-t border-gray-200 pt-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary">Need Help?</p>
+<p class="text-[10px] text-on-surface-variant">24/7 Priority Support</p>
+</div>
+</div>
+</div>
+</aside>
+</body></html>

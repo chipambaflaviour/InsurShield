@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InsurShield | Vehicle Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#3d2d2a",
+                      "on-surface-variant": "#5a413d",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-tertiary-fixed-variant": "#1830c2",
+                      "tertiary-fixed": "#dfe0ff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#5f5e5e",
+                      "on-primary-fixed-variant": "#8f0f07",
+                      "tertiary": "#00137f",
+                      "background": "#fff8f6",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#94a0ff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#ffedea",
+                      "inverse-primary": "#ffb4a8",
+                      "surface-container-low": "#fff0ee",
+                      "primary-fixed": "#ffdad4",
+                      "primary": "#570000",
+                      "secondary-fixed": "#e5e2e1",
+                      "primary-container": "#800000",
+                      "surface": "#fff8f6",
+                      "tertiary-fixed-dim": "#bcc2ff",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#000c61",
+                      "surface-dim": "#eed4d0",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#ff8371",
+                      "surface-container-high": "#fde2de",
+                      "on-surface": "#261816",
+                      "on-primary-fixed": "#410000",
+                      "surface-container": "#ffe9e6",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-tint": "#b22b1d",
+                      "outline": "#8e706c",
+                      "tertiary-container": "#0021b9",
+                      "secondary-container": "#e2dfde",
+                      "on-secondary-container": "#636262",
+                      "surface-variant": "#f7ddd8",
+                      "on-secondary-fixed-variant": "#474746",
+                      "surface-container-highest": "#f7ddd8",
+                      "error-container": "#ffdad6",
+                      "on-background": "#261816",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "outline-variant": "#e2bfb9",
+                      "surface-bright": "#fff8f6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "topbar_height": "64px",
+                      "sidebar_width": "260px",
+                      "base": "4px",
+                      "sm": "12px",
+                      "xs": "8px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "xxl": "48px",
+                      "gutter": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "h1": ["Inter"],
+                      "button": ["Inter"],
+                      "body-md": ["Inter"],
+                      "h3": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "h2": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm fixed top-0 h-16 w-full z-50 flex items-center justify-between px-6 font-sans antialiased text-sm font-medium">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 cursor-pointer active:opacity-70">arrow_back</span>
+<span class="text-2xl font-bold tracking-tighter text-red-900 dark:text-red-500">InsurShield</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-600 cursor-pointer active:opacity-70">help_outline</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto">
+<div class="mb-8">
+<h1 class="font-h1 text-h1 text-primary mb-2">Finalize Your Protection</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">To activate your comprehensive coverage, please provide clear photos of your vehicle and the required documents.</p>
+</div>
+<section class="mb-10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+<h2 class="font-h2 text-h2 text-on-surface">Vehicle Inspection Photos</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
+<div class="aspect-video w-full bg-surface-container rounded-lg flex flex-col items-center justify-center text-on-surface-variant gap-2 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-30 transition-opacity" data-alt="A professional studio photograph of a luxury sedan angled from the front left, highlighting the sleek lines and headlamp design. The lighting is soft and diffused, creating a premium light-mode atmosphere with subtle maroon reflections on the metallic surface. The setting is clean and minimalist, emphasizing clarity and structural integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHxDiG3F3dOR89ZRzIpLfua2zi4HuqTofwzm5Kq3mKk84vM_29KAVLxqc_3B13318IO3SkxZhl0zkoaI04jk5uweOAq-ho5fbLZLFNKeGB_1poTLyNnEYrABomYQ61C0Swh-hKfWsPzL1o9LKnbA7-FTg3liCY7iP7uFE8mCQU2MwflGk-LE6pcS5Aa2Xon65rrg0fwg6RFCHR4kmszSUrAP1nW_vUmR41Tw-1c2wpVpr2Vm3pFn_A6-7Qt9ZpuszsXYSISjhmVYk"/>
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">photo_camera</span>
+<span class="font-label-caps text-label-caps">FRONT LEFT ANGLE</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-medium text-on-surface-variant italic">Capture entire front and left side</span>
+<button class="text-primary font-button text-button">Upload</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
+<div class="aspect-video w-full bg-surface-container rounded-lg flex flex-col items-center justify-center text-on-surface-variant gap-2 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-30 transition-opacity" data-alt="A high-resolution shot of a modern car's front right profile, showing the front grille and the right-side door panels in a bright, professionally lit showroom environment. The scene is clean with sharp focus on the vehicle's exterior condition. The overall mood is authoritative and reliable, matching a corporate insurance brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn9D9Fwg2u35HmItIH8a3g2uXDoomgU23REBGNmkxR1s35JrM2a0jv0bKB0mmp7a74Q18V5x7QvULyV4cNcX41o_HJDgweWT3ZPnOaTPvWWiunIGBuNz3iODAifHLv036rUl-YJuYK4DLjyFbxx-DOzWr_bx63x8c_QCkR0LPpZJJ3LcvMUgiKALhCE7-37H13Hw34wPq9-6xvHpdDW6ZxtDk-hDpGk6lHUkjMq3Zqcx4wNwzWGbNM_VyvfRsmlLV_4ElqQ1RvkkA"/>
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">photo_camera</span>
+<span class="font-label-caps text-label-caps">FRONT RIGHT ANGLE</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-medium text-on-surface-variant italic">Capture entire front and right side</span>
+<button class="text-primary font-button text-button">Upload</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
+<div class="aspect-video w-full bg-surface-container rounded-lg flex flex-col items-center justify-center text-on-surface-variant gap-2 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-30 transition-opacity" data-alt="The rear view of a luxury vehicle parked in a bright, modern garage with high-key lighting. The photograph focuses on the rear lights, license plate area, and bumper condition. The image exudes a sense of security and detailed verification, utilizing a clean white and deep maroon color scheme typical of a private banking or elite insurance app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASP2Qrcqvp0y_Eh1R6scQRI3Zb9unQkL8_DwzV-E1lHSCys-O_RyQTiSaoHOrXRlcU5Q_4xMPpdKCTyoT9mtNwWsI5SbTwXzDdq0C9zs249iu2KfORTij0e_tj9TkhvINoQ15NBdjSgfisWIQ0wXvtbRmE3bTKbPD7Bj58m0I44M0Mftr4JLJkHcIPnLMZx2HFvxvopkfKWXHeky_WFEduwctwna5BEc38Vi9_XfuM4Z2oyby5VHhAgvD0aPM0CTxEEHHq-HQD1r0"/>
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">photo_camera</span>
+<span class="font-label-caps text-label-caps">REAR VIEW</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-medium text-on-surface-variant italic">Capture full rear including license plate</span>
+<button class="text-primary font-button text-button">Upload</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
+<div class="aspect-video w-full bg-surface-container rounded-lg flex flex-col items-center justify-center text-on-surface-variant gap-2 relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:opacity-30 transition-opacity" data-alt="A clear, macro photograph of a modern digital car dashboard and odometer showing a precise mileage reading. The lighting is sharp to ensure all numbers are legible, set against the dark, high-quality plastic of the steering wheel area. This technical shot represents precision and data-driven efficiency for an insurance verification process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRB29XDIUH97ye7bokiYoMa9On6HKw2mF4M3UkD27i7jVajLetmfgDsP6WuxSZ6yXtA50ctRBNal1P1_jXNJYWffZBj5ucaQmOlxmAl20SPk-BItJ3m1Sfzg4AsEbPrXEC0-KxKHGoLyXo7OeAlZpeJr60Bbhn_qEEilZ_uAimEOju5AqhPQFM7_qsRUehJkrWfGBz5ngAcyV3xQ6L2qA9ZAIn4TzsQtIJ0mZFRuUWfkbr91obe4enXi7hmQC7ykGkXJM2tNRavIk"/>
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">speed</span>
+<span class="font-label-caps text-label-caps">DASHBOARD/ODOMETER</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-medium text-on-surface-variant italic">Ensure mileage and VIN are visible</span>
+<button class="text-primary font-button text-button">Upload</button>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">description</span>
+<h2 class="font-h2 text-h2 text-on-surface">Required Documents</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-white border border-outline-variant rounded-xl shadow-sm hover:border-primary transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3">White Book</h3>
+<p class="text-xs text-on-surface-variant font-medium">Vehicle Registration Document</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">upload_file</span>
+<span class="font-button text-button text-primary">Attach</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-white border border-outline-variant rounded-xl shadow-sm hover:border-primary transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3">Driver's License</h3>
+<p class="text-xs text-on-surface-variant font-medium">Valid Front and Back Copy</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">upload_file</span>
+<span class="font-button text-button text-primary">Attach</span>
+</div>
+</div>
+</div>
+</section>
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-white/80 backdrop-blur-md border-t border-gray-100 flex justify-center z-40">
+<button class="w-full max-w-lg bg-primary text-on-primary py-4 rounded-xl font-button text-button shadow-lg active:scale-95 transition-transform">
+                Submit Photos &amp; Docs
+            </button>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] md:hidden">
+<div class="flex flex-col items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-red-900 bg-red-50 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Policies</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">headset_mic</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

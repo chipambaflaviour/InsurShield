@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#3d2d2a",
+                        "on-surface-variant": "#5a413d",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#1830c2",
+                        "tertiary-fixed": "#dfe0ff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed-variant": "#8f0f07",
+                        "tertiary": "#00137f",
+                        "background": "#fff8f6",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#94a0ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#ffedea",
+                        "inverse-primary": "#ffb4a8",
+                        "surface-container-low": "#fff0ee",
+                        "primary-fixed": "#ffdad4",
+                        "primary": "#570000",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-container": "#800000",
+                        "surface": "#fff8f6",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#000c61",
+                        "surface-dim": "#eed4d0",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#ff8371",
+                        "surface-container-high": "#fde2de",
+                        "on-surface": "#261816",
+                        "on-primary-fixed": "#410000",
+                        "surface-container": "#ffe9e6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-tint": "#b22b1d",
+                        "outline": "#8e706c",
+                        "tertiary-container": "#0021b9",
+                        "secondary-container": "#e2dfde",
+                        "on-secondary-container": "#636262",
+                        "surface-variant": "#f7ddd8",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-highest": "#f7ddd8",
+                        "error-container": "#ffdad6",
+                        "on-background": "#261816",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "outline-variant": "#e2bfb9",
+                        "surface-bright": "#fff8f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "button": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 docked full-width top-0 h-16 flex items-center justify-between px-6 w-full max-w-full fixed z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70" data-icon="menu">menu</span>
+<h1 class="text-2xl font-bold tracking-tighter text-red-900 dark:text-red-500">InsurShield</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-4xl mx-auto">
+<!-- Step Progress Bar -->
+<div class="mb-12">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-primary uppercase">Step 2: Usage</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">40% Complete</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[40%]"></div>
+</div>
+<div class="flex justify-between mt-2">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-primary mb-1"></div>
+<span class="font-label-caps text-[10px] text-primary">Vehicle</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-primary mb-1"></div>
+<span class="font-label-caps text-[10px] text-primary">Usage</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-surface-container-highest mb-1"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Coverage</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-surface-container-highest mb-1"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Quote</span>
+</div>
+</div>
+</div>
+<!-- Header Section -->
+<section class="mb-10 text-center">
+<h2 class="font-h2 text-h2 text-on-surface mb-2">How will you use this vehicle?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Select the usage type that best describes your daily activities to get an accurate premium calculation.</p>
+</section>
+<!-- Usage Options (Bento-style Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Individual Car -->
+<label class="relative group cursor-pointer">
+<input checked="" class="peer sr-only" name="usage" type="radio"/>
+<div class="h-full p-6 bg-surface-container-lowest border-2 border-transparent rounded-xl shadow-sm transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:ring-4 peer-checked:ring-primary/5 hover:border-outline-variant">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="directions_car">directions_car</span>
+</div>
+<div class="h-6 w-6 rounded-full border-2 border-outline flex items-center justify-center peer-checked:border-primary">
+<div class="w-3 h-3 rounded-full bg-primary scale-0 transition-transform peer-checked:scale-100"></div>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Individual</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Personal commute, family trips, and general private use. Standard social, domestic and pleasure usage.</p>
+</div>
+</label>
+<!-- Individual Motorcycle -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="usage" type="radio"/>
+<div class="h-full p-6 bg-surface-container-lowest border-2 border-transparent rounded-xl shadow-sm transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:ring-4 peer-checked:ring-primary/5 hover:border-outline-variant">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="moped">moped</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Individual (Motorcycles)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Private use for motorcycles. Includes commuting to a single place of work and weekend leisure riding.</p>
+</div>
+</label>
+<!-- Commercial Motorcycle -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="usage" type="radio"/>
+<div class="h-full p-6 bg-surface-container-lowest border-2 border-transparent rounded-xl shadow-sm transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:ring-4 peer-checked:ring-primary/5 hover:border-outline-variant">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="delivery_dining">delivery_dining</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Commercial (Motorcycles)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">For delivery services, couriers, and professional bike-hailing operators. Includes carriage of goods for hire.</p>
+</div>
+</label>
+<!-- Commercial Car / Hire -->
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="usage" type="radio"/>
+<div class="h-full p-6 bg-surface-container-lowest border-2 border-transparent rounded-xl shadow-sm transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:ring-4 peer-checked:ring-primary/5 hover:border-outline-variant">
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="local_taxi">local_taxi</span>
+</div>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Commercial (Cars for Hire)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">For ride-sharing apps, taxi services, or corporate car fleets used by multiple employees for business purposes.</p>
+</div>
+</label>
+</div>
+<!-- Featured Banner -->
+<div class="mt-8 rounded-2xl overflow-hidden relative h-48 flex items-center p-8 bg-inverse-surface">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30" data-alt="A professional close-up of a luxury car steering wheel and dashboard in soft focus, with warm ambient lighting reflecting off polished wood and leather surfaces. The overall mood is sophisticated and secure, using a deep maroon and charcoal color palette that aligns with a high-end corporate financial brand. The lighting is high-key but elegant, emphasizing quality and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClAmxt33laS-94AdHH5o0Fh9C-6HJx2iyr8g5_QKh0zd4WGCMHcxEh70Fp2xEOijNmwDANefJ5dZ-GVm6xap3akT4ugUQiqDmNX6Kc1rNXYN8i5BqwYe95mHNHvzD7EadRoNREypUwdDOmWMO8nkn5WyoDeE6BJgIrVRoCyauVrgv0tvh6Rg1FEsfe9TGTg_VBQkhoE8ATN4zVlKuA_pVPSKusgDYjKR4wxFH1yFeHXGxKc0Q1wZTnaJFNcCOIoltYM3CIPPHd_eg"/>
+<div class="relative z-10 max-w-sm">
+<h4 class="font-h3 text-h3 text-white mb-2">Unsure about usage?</h4>
+<p class="font-body-sm text-body-sm text-inverse-on-surface">Choosing the wrong type can affect your claims. Talk to our agents for clarity.</p>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="mt-12 flex items-center justify-between gap-4">
+<button class="flex-1 md:flex-none px-10 py-4 border border-outline text-primary font-button rounded-xl hover:bg-surface-container transition-colors">
+                Back
+            </button>
+<button class="flex-1 md:flex-none px-16 py-4 bg-primary text-on-primary font-button rounded-xl hover:bg-primary-container shadow-lg transition-all active:scale-95">
+                Next
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-2xl md:hidden">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded-xl px-3 py-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Policies</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="headset_mic">headset_mic</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Support</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

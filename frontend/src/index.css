@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-inverse-surface: #3d2d2a;
+  --color-on-surface-variant: #5a413d;
+  --color-on-secondary-fixed: #1c1b1b;
+  --color-on-tertiary-fixed-variant: #1830c2;
+  --color-tertiary-fixed: #dfe0ff;
+  --color-on-primary: #ffffff;
+  --color-secondary: #5f5e5e;
+  --color-on-primary-fixed-variant: #991b1b;
+  --color-tertiary: #00137f;
+  --color-background: #ffffff;
+  --color-on-error: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #94a0ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-inverse-on-surface: #ffedea;
+  --color-inverse-primary: #f87171;
+  --color-surface-container-low: #f9fafb;
+  --color-primary-fixed: #fecaca;
+  --color-primary: #dc2626;
+  --color-secondary-fixed: #e5e2e1;
+  --color-primary-container: #fee2e2;
+  --color-surface: #ffffff;
+  --color-tertiary-fixed-dim: #bcc2ff;
+  --color-error: #ba1a1a;
+  --color-on-tertiary-fixed: #000c61;
+  --color-surface-dim: #f3f4f6;
+  --color-on-error-container: #93000a;
+  --color-on-primary-container: #7f1d1d;
+  --color-surface-container-high: #f3f4f6;
+  --color-on-surface: #111827;
+  --color-on-primary-fixed: #450a0a;
+  --color-surface-container: #f3f4f6;
+  --color-secondary-fixed-dim: #c8c6c5;
+  --color-surface-tint: #dc2626;
+  --color-outline: #8e706c;
+  --color-tertiary-container: #0021b9;
+  --color-secondary-container: #e2dfde;
+  --color-on-secondary-container: #636262;
+  --color-surface-variant: #f7ddd8;
+  --color-on-secondary-fixed-variant: #474746;
+  --color-surface-container-highest: #f7ddd8;
+  --color-error-container: #ffdad6;
+  --color-on-background: #261816;
+  --color-on-secondary: #ffffff;
+  --color-primary-fixed-dim: #ffb4a8;
+  --color-outline-variant: #e2bfb9;
+  --color-surface-bright: #fff8f6;
+
+  --font-label-caps: Inter, sans-serif;
+  --font-body-sm: Inter, sans-serif;
+  --font-h1: Inter, sans-serif;
+  --font-button: Inter, sans-serif;
+  --font-body-md: Inter, sans-serif;
+  --font-h3: Inter, sans-serif;
+  --font-body-lg: Inter, sans-serif;
+  --font-h2: Inter, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(0, 72%, 51%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(230, 100%, 79%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(0, 72%, 51%, 0.03) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(43, 100%, 50%, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--color-on-background);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}

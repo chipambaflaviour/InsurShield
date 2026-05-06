@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InsurShield - Premium Payment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#3d2d2a",
+                      "on-surface-variant": "#5a413d",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-tertiary-fixed-variant": "#1830c2",
+                      "tertiary-fixed": "#dfe0ff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#5f5e5e",
+                      "on-primary-fixed-variant": "#8f0f07",
+                      "tertiary": "#00137f",
+                      "background": "#fff8f6",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#94a0ff",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#ffedea",
+                      "inverse-primary": "#ffb4a8",
+                      "surface-container-low": "#fff0ee",
+                      "primary-fixed": "#ffdad4",
+                      "primary": "#570000",
+                      "secondary-fixed": "#e5e2e1",
+                      "primary-container": "#800000",
+                      "surface": "#fff8f6",
+                      "tertiary-fixed-dim": "#bcc2ff",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#000c61",
+                      "surface-dim": "#eed4d0",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#ff8371",
+                      "surface-container-high": "#fde2de",
+                      "on-surface": "#261816",
+                      "on-primary-fixed": "#410000",
+                      "surface-container": "#ffe9e6",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-tint": "#b22b1d",
+                      "outline": "#8e706c",
+                      "tertiary-container": "#0021b9",
+                      "secondary-container": "#e2dfde",
+                      "on-secondary-container": "#636262",
+                      "surface-variant": "#f7ddd8",
+                      "on-secondary-fixed-variant": "#474746",
+                      "surface-container-highest": "#f7ddd8",
+                      "error-container": "#ffdad6",
+                      "on-background": "#261816",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "outline-variant": "#e2bfb9",
+                      "surface-bright": "#fff8f6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "topbar_height": "64px",
+                      "sidebar_width": "260px",
+                      "base": "4px",
+                      "sm": "12px",
+                      "xs": "8px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "xxl": "48px",
+                      "gutter": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "h1": ["Inter"],
+                      "button": ["Inter"],
+                      "body-md": ["Inter"],
+                      "h3": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "h2": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm fixed top-0 h-16 w-full z-50 flex items-center justify-between px-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70">arrow_back</span>
+<span class="text-2xl font-bold tracking-tighter text-red-900 dark:text-red-500">InsurShield</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 cursor-pointer active:opacity-70">lock</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant hidden md:block">SECURE CHECKOUT</span>
+</div>
+</header>
+<main class="pt-24 pb-12 px-gutter max-w-4xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<section class="md:col-span-12">
+<div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-xl flex flex-col items-center text-center border border-surface-container">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">TOTAL PREMIUM DUE</span>
+<h1 class="font-h1 text-h1 text-primary mb-xs">ZMW 2,450.00</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Policy: Comprehensive Private Motor #49201</p>
+</div>
+</section>
+<section class="md:col-span-7 space-y-md">
+<div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-lg border border-surface-container">
+<h3 class="font-h3 text-h3 text-on-surface mb-lg">Select Payment Method</h3>
+<div class="grid grid-cols-3 gap-sm mb-lg">
+<div class="cursor-pointer border-2 border-primary bg-red-50/50 dark:bg-red-900/10 rounded-xl p-md flex flex-col items-center gap-xs transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary text-3xl">smartphone</span>
+<span class="font-label-caps text-[10px] text-primary text-center">MOBILE MONEY</span>
+</div>
+<div class="cursor-pointer border border-outline-variant hover:border-primary rounded-xl p-md flex flex-col items-center gap-xs transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-3xl">credit_card</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant group-hover:text-primary text-center">BANK CARD</span>
+</div>
+<div class="cursor-pointer border border-outline-variant hover:border-primary rounded-xl p-md flex flex-col items-center gap-xs transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-3xl">account_balance</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant group-hover:text-primary text-center">TRANSFER</span>
+</div>
+</div>
+<div class="space-y-md">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">Select Network Operator</label>
+<div class="grid grid-cols-1 gap-xs">
+<label class="relative flex items-center p-md border border-outline-variant rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="network" type="radio" value="mtn"/>
+<span class="ml-3 font-body-md text-on-surface">MTN MoMo</span>
+<div class="ml-auto w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center overflow-hidden">
+<img class="w-8 h-8 object-contain" data-alt="A clean, minimalist representation of a telecommunications logo with bright yellow and blue branding. The aesthetic is modern and professional, fitting into a high-end financial application interface with soft studio lighting and a clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtbxlJlrWxsZgvcIttNg-BmxyRXQGOqBY1zG3i1QZ_2Z_stVZU9VRIOVF8S-GxGzzHI5zHFwgzh8KK_SGIlmkeQ1nyIuRkNzyQonZBNSqiyJQymdwyrJlb3LBdnMPKJD1A3MTbItZHzO8kiuwelqN-WiZTUp1e15dLPM4fP0TU-KoZsyaZQKo8DjALsc0yp8eoI5G5zVGqIU-DrG1haVtETXUbE7P3SgxO4yRmjhjrl_5JLK07w9cJSIpHdmwmPmftiym5uYBiAtY"/>
+</div>
+</label>
+<label class="relative flex items-center p-md border border-outline-variant rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="network" type="radio" value="airtel"/>
+<span class="ml-3 font-body-md text-on-surface">Airtel Money</span>
+<div class="ml-auto w-10 h-10 rounded-full bg-red-600 flex items-center justify-center overflow-hidden">
+<img class="w-8 h-8 object-contain" data-alt="A sophisticated corporate logo graphic with vibrant red and white tones. The visual style is crisp and digital-first, designed to evoke reliability and speed within a modern fintech dashboard environment. Soft shadows give it a subtle 3D depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE1tdY30-sWR5L3NAVIf_AJgPX_JPWo1wzTuYxqX6RIUKHIwL4_LyENlkVwWd8KbXxTJ7UN7RFh1yZWN_2bE3N9VtNkU_nZ15lUNlYuzsnLxnIXvoZTM05_S4TeMJUxM35jasL1jBkNzAOecCwAykPoq_6T9NKa8hQKPINSN2aPMZ6NyxWFQN6ljns3m7yW9HWPYswl1QgbkNzcij0lMf0eonZ76JvoqkCg1ESDr_ImOnCv8quw5qwQ8yjbsKDEefKsn61XipYwP4"/>
+</div>
+</label>
+<label class="relative flex items-center p-md border border-outline-variant rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="network" type="radio" value="zamtel"/>
+<span class="ml-3 font-body-md text-on-surface">Zamtel Kwacha</span>
+<div class="ml-auto w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center overflow-hidden">
+<img class="w-8 h-8 object-contain" data-alt="A professional and clean mobile network logo featuring vibrant green and white elements. The lighting is bright and high-key, maintaining a premium minimalist look that aligns with high-end banking and insurance software design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMkTLVYs55gixuEHPOUBCF4Y2eQybtjNctoZTp0kFNJmSixdQ9EgqKO_27cplGTfCK5AaoPLRe171SGOFESR4Xisle2GfXUF8wAibOgN6J9Fdrucy4HyNMrYUQCCA3HlhmXksG3CrZzjv82XmMwJImRg8sE9Ovk-GOCsZTSvgeC7P31WKXqMJxcLXELmKLQf7VJ2jqQ6ao0JGRGPrLONHisFKCRxfRPOdIoYe5GEzF8yLVK49JXuKjebwF4LEC4qPzcyLLd7F5dJQ"/>
+</div>
+</label>
+</div>
+<div class="pt-md">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">MOBILE NUMBER</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md">+260</span>
+<input class="w-full pl-16 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary font-body-md outline-none transition-all" placeholder="9XX XXX XXX" type="text"/>
+</div>
+<p class="mt-2 text-[11px] text-on-surface-variant leading-relaxed">A prompt will be sent to this device to authorize the transaction. Please ensure your MoMo account has sufficient funds.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="md:col-span-5 space-y-md">
+<div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-surface-container overflow-hidden">
+<div class="p-lg bg-surface-container-low border-b border-surface-container">
+<h3 class="font-h3 text-h3 text-on-surface">Payment Summary</h3>
+</div>
+<div class="p-lg space-y-sm">
+<div class="flex justify-between font-body-sm text-on-surface-variant">
+<span>Base Premium</span>
+<span>ZMW 2,200.00</span>
+</div>
+<div class="flex justify-between font-body-sm text-on-surface-variant">
+<span>Regulatory Levies (10%)</span>
+<span>ZMW 220.00</span>
+</div>
+<div class="flex justify-between font-body-sm text-on-surface-variant">
+<span>Admin Fee</span>
+<span>ZMW 30.00</span>
+</div>
+<div class="pt-sm mt-sm border-t border-surface-container flex justify-between items-center">
+<span class="font-button text-on-surface">Amount to Pay</span>
+<span class="font-h3 text-h3 text-primary">ZMW 2,450.00</span>
+</div>
+</div>
+</div>
+<div class="space-y-sm">
+<button class="w-full bg-primary text-on-primary font-button text-button py-4 rounded-lg shadow-md hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-xl" data-weight="fill">lock</span>
+                        PAY NOW SECURELY
+                    </button>
+<div class="flex items-center justify-center gap-md py-4 grayscale opacity-60">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">verified_user</span>
+<span class="font-label-caps text-[10px]">PCI-DSS COMPLIANT</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">gpp_good</span>
+<span class="font-label-caps text-[10px]">SSL SECURED</span>
+</div>
+</div>
+</div>
+<div class="bg-red-50 border border-red-100 rounded-xl p-md">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-primary">help</span>
+<div class="space-y-1">
+<p class="font-button text-sm text-primary">Need help with your payment?</p>
+<p class="text-[12px] text-primary/80 leading-snug">Our billing team is available 24/7 to assist with Mobile Money issues.</p>
+<a class="inline-block mt-1 font-label-caps text-[10px] text-primary underline decoration-2 underline-offset-2" href="#">CONTACT SUPPORT</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-surface-container-low border-t border-surface-container mt-xxl py-xl">
+<div class="max-w-4xl mx-auto px-gutter text-center">
+<div class="flex justify-center gap-lg mb-md">
+<img class="h-8 opacity-40 grayscale" data-alt="A collection of high-end financial trust icons like Visa and Mastercard rendered in a sophisticated, minimalist monochrome style. The lighting is soft and professional, emphasizing reliability and corporate authority against a pristine white background with subtle maroon accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUrSr0VUjdoPCpxlUkjcD_BQyRBfgclXTAYH3KkTFW6PJbMhxWLZpe7kPBP3lYalkpzJCgOHggrdziivMe7PN5DP0YnZbWT46MaI00c1z1a1EjFirtT7EEHl5I93-RD-7JelYyu0QYQw9k_S_4IOIjHfUuinXbTzDIhussMCk5K0RJ3aWe3kJinSvjyafRFTGhhaWB658RYuuPsIPf-_TOACNzGCSSv9R6tv48PadESu0BbF_esiBP98kMCUjDcgwEm756WblGQ0g"/>
+<img class="h-8 opacity-40 grayscale" data-alt="Official security certification badges like SSL Secure and Norton rendered in a clean, digital aesthetic. The scene is bright and airy, using a high-key light mode look with delicate shadows to suggest premium software quality and data protection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAApQ7W3tsCCo3vCD1nqtm_dblUhUe2prIc4wlfpQHFWkOKeJa1pNFZptN4SUeDmbYnDb6U7vCjI0vq19Dp_UJveh6rEVHJtKLe4qi9x8CIz_ZZDUWsmFS0pDxv5mnVkmXTJFHPp-eWaXNQWnlydwkhgjzlA0E9LX7FddJECyhZMrBnQ4Z3KRDxHD9G2foGGc2TK03JD7hXq0AB94ZyZdv0iWf_193lOBDXMhWJcFZKQUvFDnh_j685vLtJ_sMyRB0VXdSn7_-av9c"/>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant">
+                © 2024 InsurShield Private Wealth. Licensed by the Pensions and Insurance Authority (PIA).
+                <br/>Transactions are processed via encrypted secure gateways.
+            </p>
+</div>
+</footer>
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded-xl px-3 py-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Policies</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">headset_mic</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

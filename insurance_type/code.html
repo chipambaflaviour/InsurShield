@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#3d2d2a",
+                        "on-surface-variant": "#5a413d",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#1830c2",
+                        "tertiary-fixed": "#dfe0ff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed-variant": "#8f0f07",
+                        "tertiary": "#00137f",
+                        "background": "#fff8f6",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#94a0ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#ffedea",
+                        "inverse-primary": "#ffb4a8",
+                        "surface-container-low": "#fff0ee",
+                        "primary-fixed": "#ffdad4",
+                        "primary": "#570000",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-container": "#800000",
+                        "surface": "#fff8f6",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#000c61",
+                        "surface-dim": "#eed4d0",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#ff8371",
+                        "surface-container-high": "#fde2de",
+                        "on-surface": "#261816",
+                        "on-primary-fixed": "#410000",
+                        "surface-container": "#ffe9e6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-tint": "#b22b1d",
+                        "outline": "#8e706c",
+                        "tertiary-container": "#0021b9",
+                        "secondary-container": "#e2dfde",
+                        "on-secondary-container": "#636262",
+                        "surface-variant": "#f7ddd8",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-highest": "#f7ddd8",
+                        "error-container": "#ffdad6",
+                        "on-background": "#261816",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "outline-variant": "#e2bfb9",
+                        "surface-bright": "#fff8f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "topbar_height": "64px",
+                        "sidebar_width": "260px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "gutter": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "button": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #fff8f6;
+            color: #261816;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(142, 112, 108, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen font-body-md">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 docked full-width top-0 h-16 flex items-center justify-between px-6 w-full max-w-full fixed z-50">
+<div class="flex items-center gap-4">
+<button class="cursor-pointer active:opacity-70 text-red-900 dark:text-red-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="text-2xl font-bold tracking-tighter text-red-900 dark:text-red-500">InsurShield</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<span class="font-sans antialiased text-sm font-medium text-red-900 dark:text-red-400 font-semibold cursor-pointer">Insurance Type</span>
+<span class="font-sans antialiased text-sm font-medium text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Details</span>
+<span class="font-sans antialiased text-sm font-medium text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Payment</span>
+</nav>
+<button class="cursor-pointer active:opacity-70 text-red-900 dark:text-red-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-gutter max-w-7xl mx-auto">
+<!-- Step Progress Bar -->
+<div class="mb-xl">
+<div class="flex items-center justify-between mb-xs">
+<span class="font-label-caps text-label-caps text-primary uppercase">Step 1 of 3</span>
+<span class="font-label-caps text-label-caps text-outline">Insurance Type Selection</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-primary w-1/3"></div>
+<div class="h-full bg-surface-container w-2/3"></div>
+</div>
+</div>
+<!-- Header Section -->
+<section class="mb-xl">
+<h1 class="font-h1 text-h1 text-on-background mb-sm">Secure Your Journey</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Choose the coverage that best fits your needs. From legal essentials to total peace of mind, we have you covered.</p>
+</section>
+<!-- Interactive Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Third Party Card -->
+<div class="group relative flex flex-col bg-white border border-outline-variant rounded-xl p-lg shadow-sm hover:shadow-md hover:border-primary transition-all cursor-pointer">
+<div class="mb-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-md">
+<span class="material-symbols-outlined text-3xl" data-icon="gavel">gavel</span>
+</div>
+<h2 class="font-h2 text-h2 mb-xs">Third Party</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Essential legal protection to keep you on the road and compliant.</p>
+</div>
+<div class="flex-grow space-y-md border-t border-surface-container pt-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Legal Liability to Third Parties</span>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Property Damage Coverage</span>
+</div>
+<div class="flex items-start gap-sm opacity-40">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="cancel">cancel</span>
+<span class="font-body-sm text-body-sm">Theft &amp; Fire Protection</span>
+</div>
+</div>
+<div class="mt-xl flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-outline block mb-1">STARTING FROM</span>
+<span class="font-h3 text-h3 text-primary">$299<span class="text-sm font-normal text-on-surface-variant">/yr</span></span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Comprehensive Card (Highlighted) -->
+<div class="group relative flex flex-col bg-white border-2 border-primary rounded-xl p-lg shadow-lg overflow-hidden cursor-pointer">
+<!-- Best Value Badge -->
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-lg py-1 rounded-bl-xl font-label-caps text-[10px] tracking-widest">
+                    RECOMMENDED
+                </div>
+<div class="mb-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container mb-md">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h2 class="font-h2 text-h2 mb-xs">Comprehensive</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Total protection for your vehicle against almost every eventuality.</p>
+</div>
+<div class="flex-grow space-y-md border-t border-surface-container pt-md">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<span class="font-body-sm text-body-sm font-bold block">Theft &amp; Fire</span>
+<span class="text-xs text-on-surface-variant">Full replacement value for total loss.</span>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<span class="font-body-sm text-body-sm font-bold block">Accidental Damage</span>
+<span class="text-xs text-on-surface-variant">Repair costs for collisions and impacts.</span>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<span class="font-body-sm text-body-sm font-bold block">Natural Disasters</span>
+<span class="text-xs text-on-surface-variant">Coverage for flood, hail, and storms.</span>
+</div>
+</div>
+</div>
+<div class="mt-xl flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-outline block mb-1">STARTING FROM</span>
+<span class="font-h3 text-h3 text-primary">$849<span class="text-sm font-normal text-on-surface-variant">/yr</span></span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="done" style="font-variation-settings: 'FILL' 1;">done</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Style Info Section -->
+<section class="mt-xxl grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="md:col-span-2 relative h-48 rounded-xl overflow-hidden bg-inverse-surface flex items-end p-lg">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40" data-alt="A professional business meeting in a high-rise office with large windows overlooking a modern city skyline. The room is filled with warm, soft afternoon sunlight creating an atmosphere of reliability and prestige. The interior design is minimalist with high-end corporate finishes in deep tones and mahogany wood accents, perfectly matching a premium insurance brand's aesthetic. The overall mood is serious yet optimistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEovxujdw4qF__lgJoOpjKJUemWxwaIXhqFjLr_PzGAIxibjBTR0bNDk2oXZpvnGrFXSAnDfjvsGUArLxAwVwpk7e42XfqKd8H2tEWU20eS5I0nAw-GyWz-9Frxan1_iCZ1JL-5nH0yonz8UodOWG2zODfwakR5e8Hou1HvNilwrSz4WQcCvncbZ48RZAOehdFj3-9tbzddcAZB4WkC_9gj7gdyES-6o81fEDm8L67cW2tjkDEEx9efck722c8Et3bfqZaN3nAp50"/>
+<div class="relative z-10">
+<h3 class="font-h3 text-h3 text-white mb-base">Expert Consultation</h3>
+<p class="text-white/80 font-body-sm">Our advisors are available 24/7 to help you choose the right plan.</p>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-xl p-lg flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-sm" data-icon="bolt">bolt</span>
+<h4 class="font-h3 text-h3 mb-xs">Fast Quote</h4>
+<p class="font-body-sm text-on-surface-variant">Get approved in under 5 minutes with our automated system.</p>
+</div>
+</section>
+<!-- CTA Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-surface-container p-md md:p-lg flex flex-col md:flex-row items-center justify-between gap-md z-40">
+<div class="hidden md:block">
+<p class="font-body-sm text-on-surface-variant">Need help deciding?</p>
+<button class="text-primary font-bold text-sm hover:underline">Compare Detailed Benefits</button>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-xxl py-md rounded-xl font-button text-button shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-sm">
+                Select &amp; Continue
+                <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded-xl px-3 py-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:text-red-800 dark:hover:text-red-300 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Policies</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:text-red-800 dark:hover:text-red-300 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="headset_mic">headset_mic</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Support</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:text-red-800 dark:hover:text-red-300 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+</body></html>
