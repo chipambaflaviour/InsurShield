@@ -100,6 +100,35 @@ export default function PolicyConfirmationPage() {
           </div>
         </div>
 
+        {vehicleDetails?.includeRoadTax && (
+          <div className="bg-white rounded-2xl shadow-sm border-t-4 border-t-primary border-x border-b border-gray-100 relative overflow-hidden mt-6">
+            <div className="p-6 relative z-10 border-b border-gray-100 bg-surface-container-low">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-[18px] font-bold text-primary">RTSA Road Tax Disc</h3>
+                  <div className="text-[12px] font-bold tracking-[0.05em] text-secondary mt-1">
+                    RECEIPT NO: RT-{Math.floor(100000 + Math.random() * 900000)}
+                  </div>
+                </div>
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
+                  <span className="material-symbols-outlined text-primary">directions_car</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-6 space-y-4 relative z-10">
+              <div className="flex items-center gap-3 bg-primary/5 text-primary p-3 rounded-lg text-sm mb-2 border border-primary/10">
+                <span className="material-symbols-outlined">info</span>
+                Your official digital road tax disc has been emailed to you and is instantly valid with RTSA.
+              </div>
+              <div className="bg-gray-50 border-t border-gray-100 p-4 -mx-6 -mb-6 flex gap-4 relative z-10 mt-4">
+                <button className="flex-1 py-3 bg-white border border-outline-variant text-on-surface-variant font-semibold rounded-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
+                  <span className="material-symbols-outlined text-[18px]">download</span> Download Disc
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         <button onClick={handleFinish} className="w-full bg-primary text-white font-semibold text-[16px] py-4 rounded-xl shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-8">
           <span className="material-symbols-outlined text-[20px]">home</span> Return to Home
         </button>

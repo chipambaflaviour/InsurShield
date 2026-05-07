@@ -11,6 +11,7 @@ export default function VehicleIdentificationPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [retrievedVehicle, setRetrievedVehicle] = useState(null);
+  const [includeRoadTax, setIncludeRoadTax] = useState(false);
   const navigate = useNavigate();
   const { setVehicleDetails } = useStore();
 
@@ -32,7 +33,11 @@ export default function VehicleIdentificationPage() {
           year: '2020',
           color: 'White',
           chassisNumber: 'JT111222333444555',
+          roadTaxExpiry: '31-10-2023',
+          roadTaxStatus: 'Expired',
+          roadTaxAmount: 'ZMW 500',
         });
+        setIncludeRoadTax(true);
       } else {
         setError('Vehicle not found in RTSA database. Please check the plate number.');
       }
@@ -41,7 +46,10 @@ export default function VehicleIdentificationPage() {
 
   const handleConfirm = () => {
     if (retrievedVehicle) {
-      setVehicleDetails(retrievedVehicle);
+      setVehicleDetails({
+        ...retrievedVehicle,
+        includeRoadTax: includeRoadTax
+      });
       navigate('/vehicle-usage');
     }
   };
@@ -120,9 +128,39 @@ export default function VehicleIdentificationPage() {
                       <p className="text-[12px] text-on-surface-variant font-medium">Color</p>
                       <p className="font-semibold text-on-surface">{retrievedVehicle.color}</p>
                     </div>
-                    <div className="col-span-2">
-                      <p className="text-[12px] text-on-surface-variant font-medium">Chassis Number</p>
-                      <p className="font-semibold text-on-surface">{retrievedVehicle.chassisNumber}</p>
+                    <div className="col-span-2 pt-3 mt-1 border-t border-gray-100">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-[12px] text-on-surface-variant font-medium">Chassis Number</p>
+                        <p className="font-semibold text-on-surface text-sm">{retrievedVehicle.chassisNumber}</p>
+                      </div>
+                      <div className="flex items-center justify-between mb-2 mt-3 pt-3 border-t border-gray-100">
+                        <p className="text-[12px] text-on-surface-variant font-medium">Road Tax Status</p>
+                        <span className={`px-2 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold ${retrievedVehicle.roadTaxStatus === 'Expired' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                          {retrievedVehicle.roadTaxStatus} (Exp: {retrievedVehicle.roadTaxExpiry})
+                        </span>
+                      </div>
+                      
+                      {retrievedVehicle.roadTaxStatus === 'Expired' && (
+                        <div 
+                          className={`p-4 rounded-xl border mt-3 flex items-start gap-3 cursor-pointer transition-colors ${includeRoadTax ? 'bg-primary/5 border-primary/30' : 'bg-surface border-gray-200'}`}
+                          onClick={() => setIncludeRoadTax(!includeRoadTax)}
+                        >
+                          <div className="mt-1">
+                            <input 
+                              type="checkbox" 
+                              checked={includeRoadTax}
+                              onChange={() => setIncludeRoadTax(!includeRoadTax)}
+                              className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary"
+                            />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-sm text-primary">Renew Road Tax with Insurance</p>
+                            <p className="text-[12px] text-on-surface-variant mt-1 leading-relaxed">
+                              Pay your road tax ({retrievedVehicle.roadTaxAmount}) together with your premium. You will receive your official RTSA digital road tax disc via email immediately.
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

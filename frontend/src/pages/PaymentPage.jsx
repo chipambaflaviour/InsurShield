@@ -6,10 +6,14 @@ import { useStore } from '../store/useStore';
 
 export default function PaymentPage() {
   const navigate = useNavigate();
-  const { selectedQuote } = useStore();
+  const { selectedQuote, vehicleDetails } = useStore();
   const [method, setMethod] = useState('momo');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const premiumAmount = selectedQuote ? selectedQuote.price : 2400;
+  const roadTaxAmount = vehicleDetails?.includeRoadTax ? 500 : 0;
+  const totalAmount = premiumAmount + roadTaxAmount;
 
   const handlePay = (e) => {
     e.preventDefault();
@@ -28,7 +32,7 @@ export default function PaymentPage() {
       <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center min-h-[60vh] space-y-4 text-center px-6">
         <span className="material-symbols-outlined text-green-500 text-[80px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
         <h2 className="text-[32px] font-bold text-primary">Payment Successful!</h2>
-        <p className="text-[16px] text-on-surface-variant">Generating your policy documents...</p>
+        <p className="text-[16px] text-on-surface-variant">Generating your policy documents{vehicleDetails?.includeRoadTax ? ' and RTSA Road Tax disc' : ''}...</p>
       </motion.div>
     );
   }
@@ -44,7 +48,27 @@ export default function PaymentPage() {
           <p className="text-[14px] text-on-surface-variant">Complete your transaction to finalize the policy.</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-surface-container-low p-6 border-b border-gray-100">
+            <h3 className="text-[14px] font-bold uppercase tracking-wider text-on-surface-variant mb-4">Payment Summary</h3>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center text-[15px]">
+                <span className="text-on-surface">Insurance Premium</span>
+                <span className="font-semibold text-primary">ZMW {premiumAmount.toLocaleString()}</span>
+              </div>
+              {vehicleDetails?.includeRoadTax && (
+                <div className="flex justify-between items-center text-[15px]">
+                  <span className="text-on-surface">RTSA Road Tax Renewal</span>
+                  <span className="font-semibold text-primary">ZMW {roadTaxAmount.toLocaleString()}</span>
+                </div>
+              )}
+              <div className="pt-3 mt-3 border-t border-gray-200 flex justify-between items-center text-[18px]">
+                <span className="font-bold text-primary">Total Amount</span>
+                <span className="font-extrabold text-primary">ZMW {totalAmount.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
+          <div className="p-6 md:p-8">
           <div className="flex gap-2 p-1 bg-surface-container-low border border-outline-variant rounded-xl mb-6">
             <button 
               className={cn("flex-1 py-3 text-[14px] font-semibold rounded-lg flex items-center justify-center gap-2 transition-all", method === 'momo' ? 'bg-white shadow border border-gray-100 text-primary' : 'text-on-surface-variant hover:text-primary')}
@@ -109,11 +133,12 @@ export default function PaymentPage() {
               ) : (
                 <>
                   <span className="material-symbols-outlined text-[20px]">lock</span>
-                  Pay {selectedQuote ? `ZMW ${selectedQuote.price.toLocaleString()}` : 'ZMW 2,400'}
+                  Pay ZMW {totalAmount.toLocaleString()}
                 </>
               )}
             </button>
           </form>
+        </div>
         </div>
         
         <div className="text-center mt-6">
