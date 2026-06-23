@@ -1,22 +1,51 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
+import ChatWidget from '../components/ChatWidget';
+import { useStore } from '../store/useStore';
+
+const NAV_LINKS = [
+  { to: '/', label: 'Home', icon: 'home' },
+  { to: '/renewal', label: 'Policies', icon: 'shield' },
+  { to: '/claims', label: 'Claims', icon: 'report_problem' },
+  { to: '/support', label: 'Support', icon: 'headset_mic' },
+];
+
+// Routes that get full-width dashboard treatment
+const PORTAL_ROUTES = ['/admin', '/insurer', '/admin-login'];
 
 export default function MainLayout() {
+  const location = useLocation();
+  const { unreadCount } = useStore();
+
+  const isActive = (to) => location.pathname === to;
+  const isPortal = PORTAL_ROUTES.some(r => location.pathname === r || location.pathname.startsWith(r + '/'));
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-on-background selection:bg-primary/20">
+      {/* Top Nav */}
       <header className="bg-white border-b border-gray-100 shadow-sm fixed top-0 h-16 w-full z-50 flex items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <span className="material-symbols-outlined text-primary cursor-pointer active:opacity-70">menu</span>
           <Link to="/" className="text-2xl font-bold tracking-tighter text-primary">InsurShield</Link>
         </div>
-        <nav className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-primary font-semibold font-sans text-sm transition-colors cursor-pointer">Home</Link>
-          <Link to="/renewal" className="text-gray-600 font-sans text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer px-3 py-2 rounded-lg">Policies</Link>
-          <Link to="/admin-login" className="text-gray-600 font-sans text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer px-3 py-2 rounded-lg">Support</Link>
-          <Link to="/insurer" className="text-gray-600 font-sans text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer px-3 py-2 rounded-lg">Insurer Portal</Link>
+        <nav className="hidden md:flex items-center gap-1">
+          {NAV_LINKS.map(link => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`font-sans text-sm font-medium px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors ${isActive(link.to) ? 'text-primary font-semibold bg-primary/5' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'}`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link to="/admin-login" className={`ml-2 font-sans text-sm font-medium px-3 py-2 rounded-lg transition-colors ${isPortal ? 'text-primary font-semibold bg-primary/5' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'}`}>
+            Staff Portal
+          </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <span className="material-symbols-outlined text-primary cursor-pointer active:opacity-70">notifications</span>
+          <Link to="/support" className="relative">
+            <span className="material-symbols-outlined text-primary cursor-pointer active:opacity-70">notifications</span>
+          </Link>
           <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant overflow-hidden">
             <span className="material-symbols-outlined text-gray-500 text-sm">person</span>
           </div>
@@ -24,28 +53,47 @@ export default function MainLayout() {
       </header>
 
       <main className="pt-16 pb-24 flex-1">
-        <Outlet />
+        {isPortal ? (
+          /* Portal pages: full-width background, centred content container */
+          <div className="min-h-[calc(100vh-64px)] bg-gray-50/80">
+            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10 py-8">
+              <Outlet />
+            </div>
+          </div>
+        ) : (
+          /* Public pages: keep existing slim layout */
+          <Outlet />
+        )}
       </main>
-      
-      {/* Bottom Nav for Mobile */}
+
+      {/* Bottom Nav — Mobile */}
       <nav className="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 backdrop-blur-md border-t border-gray-100 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-2xl">
-        <Link to="/" className="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-1 cursor-pointer active:scale-95 transition-transform">
-          <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>home</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
-        </Link>
-        <Link to="/renewal" className="flex flex-col items-center justify-center text-gray-500 hover:text-primary cursor-pointer active:scale-95 transition-transform">
-          <span className="material-symbols-outlined">shield</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Policies</span>
-        </Link>
-        <Link to="/admin-login" className="flex flex-col items-center justify-center text-gray-500 hover:text-primary cursor-pointer active:scale-95 transition-transform">
-          <span className="material-symbols-outlined">headset_mic</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Support</span>
-        </Link>
-        <Link to="/insurer" className="flex flex-col items-center justify-center text-gray-500 hover:text-primary cursor-pointer active:scale-95 transition-transform">
-          <span className="material-symbols-outlined">account_circle</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
-        </Link>
+        {[
+          { to: '/', label: 'Home', icon: 'home' },
+          { to: '/renewal', label: 'Policies', icon: 'shield' },
+          { to: '/claims', label: 'Claims', icon: 'report_problem' },
+          { to: '/support', label: 'Support', icon: 'headset_mic', badge: unreadCount > 0 },
+        ].map(link => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className={`relative flex flex-col items-center justify-center cursor-pointer active:scale-95 transition-transform ${isActive(link.to) ? 'text-primary' : 'text-gray-500 hover:text-primary'}`}
+          >
+            <span className="material-symbols-outlined" style={isActive(link.to) ? { fontVariationSettings: "'FILL' 1" } : {}}>
+              {link.icon}
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-widest mt-0.5">{link.label}</span>
+            {link.badge && (
+              <span className="absolute -top-1 right-0 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-[9px] font-bold">{unreadCount}</span>
+              </span>
+            )}
+          </Link>
+        ))}
       </nav>
+
+      {/* Global Chat Widget */}
+      <ChatWidget />
     </div>
   );
 }
